@@ -1,0 +1,20 @@
+﻿
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.TextBox("Description")
+        <button type="submit"> Enter!</button>
+    }
+
+    <h3>@( @ViewData["reversedString"] != null ? "Reversed Entire String:" : "" )  <span style="color:palevioletred"> @ViewData["reversedString"]  </span></h3>
+    <h3>@( @ViewData["reversedWords"] != null ? "Reversed Each Word:" : "" ) <span style="color:lightblue"> @ViewData["reversedWords"] </span></h3>
+</div>
+
+
